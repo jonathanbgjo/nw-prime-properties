@@ -1,0 +1,46 @@
+/* Basic grid container style */
+.properties-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns */
+    gap: 20px;
+    /* Space between grid items */
+    max-width: 600px;
+    /* Limit the width */
+    margin: 20px auto;
+    /* Center the grid horizontally */
+    font-family: Arial, sans-serif;
+}
+
+/* Style for each property item */
+.property {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* Label styling */
+.label {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Value styling */
+.value {
+    color: #555;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .properties-grid {
+        grid-template-columns: 1fr;
+        /* Single column layout on small screens */
+    }
+}
+.property:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
