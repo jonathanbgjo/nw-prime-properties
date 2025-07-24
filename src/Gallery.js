@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 
 // Sample images (replace with actual images)
 const images = [
-  '../public/images/IMG_0152.jpg',
+  '/images/IMG_0152.jpg',
   '/images/IMG_0187.jpg',
   '/images/IMG_0202.jpg',
   '/images/map.jpg'
