@@ -1,42 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <title>607 Everett Mall Way</title>
-  </head>
-  <body>
-  <div class="bg-img"></div>
-  <div class="center-card">
-    <h1>For Lease: Prime Retail Space in Everett, WA</h1>
-    <div class="property-details">
-      <p><strong>Address:</strong> 607 Everett Mall Way, Everett, WA 98201</p>
-      <p><strong>Square Feet:</strong> 2,400</p>
-      <p><strong>Highlights:</strong> High visibility, busy location, plenty of parking, flexible layout.</p>
-      <a href="mailto:alex@nwprime.com" class="contact-btn">Contact for Info</a>
+<head>
+  <meta charset="UTF-8">
+  <title>For Lease: Prime Retail Space in Everett, WA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <!-- SimpleLightbox CSS for gallery (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplelightbox/dist/simple-lightbox.min.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', Arial, sans-serif;
+      background: #f8fafc;
+      min-height: 100vh;
+    }
+    .hero {
+      position: relative;
+      background: url('main-photo.jpg') center/cover no-repeat;
+      height: 42vh;
+      min-height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      box-shadow: 0 5px 36px rgba(0,0,0,0.07);
+    }
+    .hero-overlay {
+      background: rgba(30,45,78,0.38);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0; left: 0;
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.2em;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+    .main-container {
+      background: #fff;
+      margin: -45px auto 30px auto;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(80,110,180,0.10);
+      padding: 38px 30px 28px 30px;
+      max-width: 700px;
+      position: relative;
+      z-index: 5;
+    }
+    .section {
+      margin-bottom: 32px;
+    }
+    .property-info {
+      font-size: 1.1em;
+      color: #374151;
+      margin-bottom: 18px;
+    }
+    .features-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 18px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 24px;
+    }
+    .features-list li {
+      background: #e0e7ef;
+      color: #293955;
+      padding: 7px 15px;
+      border-radius: 8px;
+      font-size: 1em;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+    }
+    .gallery {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 22px;
+    }
+    .gallery a {
+      width: 110px;
+      height: 80px;
+      display: block;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+      border: 2px solid #f4f7fb;
+      transition: border 0.15s;
+    }
+    .gallery a:hover { border: 2px solid #2760cc; }
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .map-container {
+      margin-bottom: 18px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(40,90,150,0.08);
+    }
+    .contact-section {
+      margin-top: 10px;
+      text-align: center;
+    }
+    .contact-btn {
+      display: inline-block;
+      background: #2176ff;
+      color: #fff;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      padding: 13px 30px;
+      font-size: 1.15em;
+      text-decoration: none;
+      margin-top: 13px;
+      transition: background 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 10px rgba(33,118,255,0.09);
+    }
+    .contact-btn:hover {
+      background: #1654b5;
+    }
+    /* Contact Form */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      margin-top: 13px;
+    }
+    .contact-form input, .contact-form textarea {
+      padding: 9px 12px;
+      border-radius: 7px;
+      border: 1px solid #c9d1e5;
+      font-size: 1em;
+      font-family: inherit;
+      resize: vertical;
+    }
+    .contact-form button {
+      background: #2176ff;
+      color: #fff;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      padding: 11px 22px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 7px;
+      transition: background 0.18s;
+    }
+    .contact-form button:hover {
+      background: #1744a8;
+    }
+    @media (max-width: 700px) {
+      .main-container { padding: 16px 2vw 14px 2vw; }
+      .hero h1 { font-size: 1.25em; }
+      .gallery a { width: 90px; height: 65px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>For Lease: Prime Retail Space in Everett, WA</h1>
     </div>
   </div>
+
+  <div class="main-container">
+    <div class="section property-info">
+      <strong>Address:</strong> 123 Main St, Everett, WA 98201<br>
+      <strong>Square Feet:</strong> 2,400<br>
+      <strong>Lease Rate:</strong> $X/sqft (customize)<br>
+      <strong>Contact:</strong> jonathanbgjo@gmail.com | 425-443-1002
+    </div>
+
+    <div class="section">
+      <strong>Property Highlights:</strong>
+      <ul class="features-list">
+        <li>High visibility</li>
+        <li>Busy location</li>
+        <li>Plenty of parking</li>
+        <li>Flexible layout</li>
+        <li>Move-in ready</li>
+        <li>Close to transit</li>
+        <!-- Add more as needed -->
+      </ul>
+    </div>
+
+    <div class="section">
+      <strong>Photo Gallery:</strong>
+      <div class="gallery">
+        <!-- Example images (replace with your own image paths) -->
+        <a href="photo1.jpg"><img src="photo1.jpg" alt="Front view"></a>
+        <a href="photo2.jpg"><img src="photo2.jpg" alt="Interior"></a>
+        <a href="photo3.jpg"><img src="photo3.jpg" alt="Parking lot"></a>
+        <a href="photo4.jpg"><img src="photo4.jpg" alt="Side view"></a>
+        <!-- Add or remove as needed -->
+      </div>
+    </div>
+
+    <div class="section">
+      <strong>Location Map:</strong>
+      <div class="map-container">
+        <!-- Update the src below with your property's Google Maps embed link -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.504983885359!2d-122.21086288437013!3d47.9784386792116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549004e0d384d86f%3A0x52d6f655ce9bcfe6!2sEverett%2C%20WA!5e0!3m2!1sen!2sus!4v1657588076553!5m2!1sen!2sus"
+          width="100%" height="220" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      </div>
+    </div>
+
+    <div class="section contact-section">
+      <strong>Contact for More Info or a Tour:</strong>
+      <!-- Contact Button -->
+      <a class="contact-btn" href="mailto:jonathanbgjo@gmail.com?subject=Property Inquiry">Email Us</a>
+      <span>or fill out the form below:</span>
+      <!-- Contact Form -->
+      <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="text" name="name" required placeholder="Your Name">
+        <input type="email" name="email" required placeholder="Your Email">
+        <textarea name="message" required rows="4" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div style="font-size:0.9em;color:#7284a8;margin-top:8px;">
+        Your info will only be used to respond to your inquiry.
+      </div>
+    </div>
+  </div>
+
+  <!-- SimpleLightbox JS (for the photo gallery popup) -->
+  <script src="https://cdn.jsdelivr.net/npm/simplelightbox/dist/simple-lightbox.jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function(){
+      var lightbox = $('.gallery a').simpleLightbox();
+    });
+  </script>
 </body>
 </html>
