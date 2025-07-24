@@ -1,4 +1,4 @@
-import React, { useState, useEffect, onLoad } from 'react';
+import React, { useState, useEffect } from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 const containerStyle = {
@@ -12,7 +12,10 @@ const center = {
 };
 const Map = () => {
   const [mapLoaded, setMapLoaded] = useState(false);
-
+const onLoad = (mapInstance) => {
+    // Optional: do something with the map instance
+    console.log('Google Map loaded:', mapInstance);
+  };
   useEffect(() => {
     // This ensures that the Google Maps API is loaded
     const loadGoogleMaps = () => {
