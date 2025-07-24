@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  min-height: 100vh;
+  position: relative;
+}
+
+.bg-img {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('your-photo.jpg') no-repeat center center/cover;
+  filter: brightness(0.6) blur(1px);
+  z-index: 0;
+}
+
+.center-card {
+  position: relative;
+  max-width: 420px;
+  margin: 60px auto;
+  background: rgba(255,255,255,0.93);
+  box-shadow: 0 6px 36px rgba(60,60,60,0.13);
+  border-radius: 18px;
+  padding: 38px 30px 30px 30px;
+  text-align: center;
+  z-index: 2;
+}
+
+.center-card h1 {
+  font-size: 1.8em;
+  margin-bottom: 18px;
+  font-weight: 700;
+  color: #1a2836;
+}
+
+.property-details p {
+  font-size: 1.07em;
+  color: #384558;
+  margin: 0 0 11px 0;
+}
+
+.contact-btn {
+  display: inline-block;
+  margin-top: 18px;
+  background: #2176ff;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-size: 1.12em;
+  text-decoration: none;
+  box-shadow: 0 3px 12px rgba(33,118,255,0.08);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.contact-btn:hover {
+  background: #1a5ed1;
+  box-shadow: 0 6px 24px rgba(33,118,255,0.13);
+}
+
+@media (max-width: 600px) {
+  .center-card {
+    padding: 20px 6vw;
+    margin: 40px 8vw;
+    max-width: 95vw;
+  }
+  .center-card h1 {
+    font-size: 1.19em;
+  }
+}
