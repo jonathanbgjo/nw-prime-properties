@@ -1,458 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Everett Retail Property - For Lease</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Google Fonts: Inter + Montserrat -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Swiper.js for carousel -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
-    />
-    <style>
-      :root {
-        --accent: #2563eb;
-        --bg: #f5f7fa;
-        --panel: #fff;
-        --glass: rgba(255, 255, 255, 0.82);
-        --shadow: 0 8px 32px rgba(40, 70, 160, 0.13);
-      }
-      body {
-        margin: 0;
-        font-family: "Inter", Arial, sans-serif;
-        background: var(--bg);
-        color: #17223b;
-        overflow-x: hidden;
-      }
-      .hero {
-        position: relative;
-        min-height: 45vh;
-        background: url("main-photo.jpg") center/cover no-repeat;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        overflow: hidden;
-      }
-      .hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          110deg,
-          rgba(30, 41, 59, 0.38),
-          rgba(37, 99, 235, 0.23)
-        );
-        z-index: 1;
-      }
-      .hero-content {
-        position: relative;
-        z-index: 2;
-        color: #fff;
-        padding: 3vw 7vw 3vw 7vw;
-      }
-      .hero-title {
-        font-family: "Montserrat", sans-serif;
-        font-size: 2.8em;
-        margin-bottom: 12px;
-        letter-spacing: 2px;
-        font-weight: 700;
-      }
-      .hero-desc {
-        font-size: 1.25em;
-        opacity: 0.93;
-      }
-      .floating-contact {
-        position: fixed;
-        bottom: 32px;
-        right: 32px;
-        z-index: 200;
-        background: var(--accent);
-        color: #fff;
-        font-weight: 600;
-        border-radius: 50px;
-        padding: 15px 30px;
-        box-shadow: 0 6px 32px rgba(37, 99, 235, 0.19);
-        text-decoration: none;
-        font-size: 1.12em;
-        transition: background 0.18s;
-      }
-      .floating-contact:hover {
-        background: #1741a6;
-      }
-      .main-panel {
-        max-width: 940px;
-        margin: -40px auto 30px auto;
-        border-radius: 18px;
-        box-shadow: var(--shadow);
-        background: var(--panel);
-        padding: 32px 36px 22px 36px;
-        position: relative;
-        z-index: 10;
-        backdrop-filter: blur(2px);
-      }
-      .swiper {
-        width: 100%;
-        border-radius: 18px;
-        overflow: hidden;
-        margin-bottom: 24px;
-        box-shadow: 0 4px 22px rgba(55, 80, 160, 0.07);
-      }
-      .swiper-slide img {
-        width: 100%;
-        height: 320px;
-        object-fit: cover;
-        display: block;
-      }
-      .features-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 22px;
-        margin-bottom: 30px;
-        margin-top: 18px;
-      }
-      .feature-item {
-        flex: 1 1 200px;
-        background: var(--glass);
-        padding: 18px;
-        border-radius: 11px;
-        text-align: center;
-        box-shadow: 0 2px 14px rgba(37, 99, 235, 0.06);
-        transition: transform 0.15s;
-      }
-      .feature-item:hover {
-        transform: translateY(-4px) scale(1.025);
-        box-shadow: 0 4px 28px rgba(37, 99, 235, 0.1);
-      }
-      .feature-icon {
-        font-size: 2.1em;
-        color: var(--accent);
-        margin-bottom: 8px;
-      }
-      .details-tabs {
-        display: flex;
-        gap: 12px;
-        margin-bottom: 16px;
-      }
-      .tab-btn {
-        flex: 1;
-        padding: 12px 0;
-        border: none;
-        background: #e6ecf7;
-        border-radius: 8px 8px 0 0;
-        font-weight: 600;
-        font-size: 1.05em;
-        cursor: pointer;
-        transition: background 0.14s;
-      }
-      .tab-btn.active,
-      .tab-btn:focus {
-        background: var(--accent);
-        color: #fff;
-      }
-      .tab-panel {
-        display: none;
-      }
-      .tab-panel.active {
-        display: block;
-        animation: fadeIn 0.35s;
-      }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(15px);
-        }
-        to {
-          opacity: 1;
-          transform: none;
-        }
-      }
-      .property-description {
-        margin-bottom: 12px;
-      }
-      .contact-form-panel {
-        background: #f8fafc;
-        border-radius: 12px;
-        padding: 28px 20px 18px 20px;
-        margin-top: 18px;
-        box-shadow: 0 2px 12px rgba(37, 99, 235, 0.07);
-        text-align: center;
-      }
-      .contact-form input,
-      .contact-form textarea {
-        width: 90%;
-        max-width: 410px;
-        margin-bottom: 13px;
-        padding: 11px;
-        border-radius: 7px;
-        border: 1px solid #c9d1e5;
-        font-size: 1em;
-        font-family: inherit;
-        resize: vertical;
-        box-shadow: 0 1px 2px rgba(37, 99, 235, 0.04);
-      }
-      .contact-form button {
-        background: var(--accent);
-        color: #fff;
-        font-weight: 600;
-        border: none;
-        border-radius: 8px;
-        padding: 13px 28px;
-        font-size: 1.09em;
-        cursor: pointer;
-        transition: background 0.18s;
-        margin-top: 8px;
-      }
-      .contact-form button:hover {
-        background: #1741a6;
-      }
-      @media (max-width: 900px) {
-        .main-panel {
-          padding: 22px 3vw;
-        }
-      }
-      @media (max-width: 700px) {
-        .main-panel {
-          margin: 10px 0;
-          padding: 12px 0vw 18px 0vw;
-        }
-        .hero-title {
-          font-size: 1.27em;
-        }
-        .swiper-slide img {
-          height: 170px;
-        }
-        .features-grid {
-          flex-direction: column;
-        }
-      }
-    </style>
-    <!-- For feature icons -->
-    <script
-      src="https://kit.fontawesome.com/9e8251c6d5.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <!-- Hero Banner -->
-    <div class="hero">
-      <div class="hero-content">
-        <div class="hero-title">Prime Retail Space for Lease — Everett, WA</div>
-        <div class="hero-desc">
-          Unmatched visibility. Flexible layout. Move-in ready.<br />
-          <span style="font-size: 1.1em"
-            >2,400 sq ft | $X/sqft | 123 Main St, Everett</span
-          >
-        </div>
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <title>NW Prime Properties – Everett Mall Strip Center</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', Arial, sans-serif; background: #f6f8fa; margin:0; }
+    .property-header { text-align:center; margin-top:32px; }
+    .main-address { color: #2176ff; font-size:1.2em; margin-bottom:12px; }
+    .suite-section {
+      background:#fff; max-width:760px; margin:32px auto; border-radius:16px;
+      box-shadow:0 4px 18px rgba(40,90,120,.07);
+      padding:36px 30px 28px 30px; position:relative;
+    }
+    .suite-title { font-size:1.5em; font-weight:700; color:#2176ff; margin-bottom:10px; }
+    .suite-info { margin-bottom:16px; }
+    .suite-gallery { display:flex; gap:12px; margin-bottom:18px; }
+    .suite-gallery img { width:120px; height:90px; object-fit:cover; border-radius:9px; box-shadow:0 2px 8px rgba(50,90,120,.09);}
+    .suite-links a {
+      display:inline-block; margin-right:14px; margin-bottom:8px;
+      background:#2176ff; color:#fff; padding:7px 18px; border-radius:7px; font-weight:600; text-decoration:none;
+      box-shadow:0 2px 6px rgba(33,118,255,0.07);
+    }
+    .suite-links a:hover { background:#1741a6; }
+    .map-section {
+      background:#fff; max-width:760px; margin:38px auto; border-radius:16px; box-shadow:0 4px 18px rgba(40,90,120,.07);
+      padding:36px 30px 28px 30px; position:relative;
+      text-align: center;
+    }
+    .map-title { font-size:1.2em; font-weight:700; color:#2176ff; margin-bottom:10px; }
+    .downloads-section {
+      background:#fff; max-width:760px; margin:38px auto 48px auto; border-radius:16px; box-shadow:0 4px 18px rgba(40,90,120,.07);
+      padding:32px 30px 22px 30px; position:relative; text-align:center;
+    }
+    .downloads-section a {
+      display:inline-block; margin:7px 14px; background:#2563eb; color:#fff;
+      padding:9px 22px; border-radius:8px; font-weight:600; text-decoration:none;
+      box-shadow:0 2px 8px rgba(37,99,235,0.08);
+    }
+    .downloads-section a:hover { background:#1741a6; }
+    @media (max-width:780px){
+      .suite-section, .map-section, .downloads-section{padding:18px 3vw;}
+      .suite-gallery img { width:80px; height:56px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="property-header">
+    <h1>NW Prime Properties – Everett Mall Strip Center</h1>
+    <div class="main-address">607 Everett Mall Way, Everett, WA 98208</div>
+    <div style="margin-bottom:12px;">
+      <strong>Prime Retail/Restaurant Spaces Available</strong>
     </div>
-
-    <a class="floating-contact" href="#contact-form">Contact Agent</a>
-
-    <div class="main-panel">
-      <!-- Image Carousel -->
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="./images/IMG_3458.jpg" alt="Front Left" />
-          </div>
-          <div class="swiper-slide">
-            <img src="./images/IMG_0187.jpg" alt="Middle" />
-          </div>
-          <div class="swiper-slide">
-            <img src="./images/IMG_0152.jpg" alt="Signage" />
-          </div>
-          <div class="swiper-slide">
-            <img src="./images/map.jpg" alt="Map" />
-          </div>
-          <!-- Add more slides as needed -->
-        </div>
-        <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
-      </div>
-
-      <!-- Feature Grid -->
-      <div class="features-grid">
-        <div class="feature-item">
-          <div class="feature-icon"><i class="fas fa-parking"></i></div>
-          Ample Parking
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon"><i class="fas fa-map-marker-alt"></i></div>
-          Prime Location
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon"><i class="fas fa-th-large"></i></div>
-          Flexible Layout
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-          Move-In Ready
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon"><i class="fas fa-bus"></i></div>
-          Close to Transit
-        </div>
-      </div>
-
-      <!-- Tabs for Details / Map / Floorplan -->
-      <div class="details-tabs">
-        <button class="tab-btn active" onclick="showTab(event, 'details')">
-          Details
-        </button>
-        <button class="tab-btn" onclick="showTab(event, 'map')">Map</button>
-        <button class="tab-btn" onclick="showTab(event, 'floorplan')">
-          Floor Plan
-        </button>
-      </div>
-      <div id="details" class="tab-panel active">
-        <div class="property-description">
-          <strong>Description:</strong> Modern retail space in the heart of
-          Everett’s busiest district. High car traffic, flexible open floor
-          plan, updated finishes, bright natural lighting. Ideal for retail,
-          medical, or service business.
-        </div>
-        <ul>
-          <li>2,400 square feet, divisible</li>
-          <li>Recently renovated</li>
-          <li>Surrounded by shops and restaurants</li>
-          <li>Signage opportunities</li>
-        </ul>
-      </div>
-      <div id="map" class="tab-panel">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1643.5962831199824!2d-122.225352260956!3d47.91072629280484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549006d344cce365%3A0x157c69209504f659!2s607%20SE%20Everett%20Mall%20Way%2C%20Everett%2C%20WA%2098208!5e1!3m2!1sen!2sus!4v1753378540585!5m2!1sen!2sus"
-          width="100%"
-          height="220"
-          frameborder="0"
-          style="border: 0"
-          allowfullscreen=""
-          aria-hidden="false"
-          tabindex="0"
-        >
-        </iframe>
-      </div>
-      <div id="floorplan" class="tab-panel">
-        <!-- Embedded PDF (view in browser) -->
-        <iframe
-          src="./images/Jo_Flyer2.pdf"
-          width="100%"
-          height="350"
-          style="border-radius: 7px; border: 1px solid #d1e2f4"
-        ></iframe>
-        <div style="text-align: center; margin-top: 7px">
-          <a
-            href="floorplan.pdf"
-            target="_blank"
-            style="color: #2176ff; font-weight: 600; text-decoration: underline"
-          >
-            Download Floor Plan PDF
-          </a>
-          <br />
-          <a
-            href="Jo_Flyer2.pdf"
-            target="_blank"
-            style="color: #2563eb; font-weight: 600; text-decoration: underline"
-          >
-            Download Leasing Flyer PDF
-          </a>
-        </div>
-      </div>
-      <div class="section" id="downloads">
-        <strong>Downloads:</strong>
-        <ul style="list-style: none; padding-left: 0; margin-top: 10px">
-          <li>
-            <a
-              href="flyer.pdf"
-              target="_blank"
-              style="
-                background: #2176ff;
-                color: #fff;
-                padding: 7px 18px;
-                border-radius: 7px;
-                font-weight: 600;
-                text-decoration: none;
-                box-shadow: 0 2px 6px rgba(33, 118, 255, 0.07);
-                display: inline-block;
-                margin-bottom: 9px;
-              "
-            >
-              Download Property Flyer (PDF)
-            </a>
-          </li>
-          <li>
-            <a
-              href="floorplan.pdf"
-              target="_blank"
-              style="
-                background: #2563eb;
-                color: #fff;
-                padding: 7px 18px;
-                border-radius: 7px;
-                font-weight: 600;
-                text-decoration: none;
-                box-shadow: 0 2px 6px rgba(37, 99, 235, 0.07);
-                display: inline-block;
-              "
-            >
-              Download Floor Plan (PDF)
-            </a>
-          </li>
-        </ul>
-      </div>
-      <!-- Contact Form -->
-      <div id="contact-form" class="contact-form-panel">
-        <h3>Request Info or Schedule a Tour</h3>
-        <form
-          class="contact-form"
-          action="https://formspree.io/f/movldlby"
-          method="POST"
-        >
-          <input type="text" name="name" required placeholder="Your Name" />
-          <input type="email" name="email" required placeholder="Your Email" />
-          <textarea
-            name="message"
-            required
-            rows="4"
-            placeholder="Tell us what you're looking for..."
-          ></textarea>
-          <button type="submit">Send Message</button>
-        </form>
-        <div style="font-size: 0.9em; color: #7284a8; margin-top: 8px">
-          Or call/text:
-          <a
-            href="tel:4254431002"
-            style="color: #2176ff; text-decoration: underline"
-            >425-443-1002</a
-          >
-        </div>
-      </div>
+    <div>
+      <img src="images/property-front.jpg" alt="Property front" style="width:98%;max-width:740px;border-radius:15px;box-shadow:0 3px 19px rgba(40,70,120,0.13);margin-bottom:10px;">
     </div>
+    <div>
+      High-visibility, flexible layouts, ample parking, and excellent Everett Mall location.<br>
+      Contact: <a href="mailto:jonathanbgjo@gmail.com">jonathanbgjo@gmail.com</a> | 425-443-1002
+    </div>
+  </div>
 
-    <!-- Swiper.js (for image carousel) -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script>
-      var swiper = new Swiper(".swiper", {
-        pagination: { el: ".swiper-pagination", clickable: true },
-        slidesPerView: 1,
-        loop: true,
-        autoplay: { delay: 3500, disableOnInteraction: false },
-      });
+  <!-- Suite 101 Example -->
+  <section class="suite-section" id="suite-101">
+    <div class="suite-title">Suite 101</div>
+    <div class="suite-info">
+      <strong>1,200 sq ft | $18/sqft/yr (NNN)</strong><br>
+      Bright storefront, direct access from parking lot, new HVAC.<br>
+      Ideal for retail, service, or quick-serve restaurant.
+    </div>
+    <div class="suite-gallery">
+      <img src="images/suite101-int.jpg" alt="Suite 101 interior">
+      <img src="images/suite101-plan.jpg" alt="Suite 101 floor plan">
+      <!-- Add more images as needed -->
+    </div>
+    <div class="suite-links">
+      <a href="/suite101-flyer.pdf" target="_blank">Download Flyer (PDF)</a>
+      <a href="/suite101-floorplan.pdf" target="_blank">View Floor Plan</a>
+    </div>
+    <!-- Embedded flyer or floor plan example -->
+    <iframe src="/suite101-flyer.pdf" width="100%" height="300" style="border-radius:8px;border:1px solid #ccd2e7;margin-top:12px;"></iframe>
+  </section>
 
-      // Tabs JS
-      function showTab(evt, tabName) {
-        var tabs = document.querySelectorAll(".tab-panel");
-        tabs.forEach((tab) => tab.classList.remove("active"));
-        document.getElementById(tabName).classList.add("active");
-        var btns = document.querySelectorAll(".tab-btn");
-        btns.forEach((btn) => btn.classList.remove("active"));
-        evt.target.classList.add("active");
-      }
-    </script>
-  </body>
+  <!-- Suite 102 Example -->
+  <section class="suite-section" id="suite-102">
+    <div class="suite-title">Suite 102</div>
+    <div class="suite-info">
+      <strong>1,800 sq ft | $17/sqft/yr (NNN)</strong><br>
+      End-cap, high signage visibility, lots of natural light.<br>
+      Ready for build-out—great for fitness, retail, or food concepts.
+    </div>
+    <div class="suite-gallery">
+      <img src="images/suite102-int.jpg" alt="Suite 102 interior">
+      <img src="images/suite102-plan.jpg" alt="Suite 102 floor plan">
+    </div>
+    <div class="suite-links">
+      <a href="/suite102-flyer.pdf" target="_blank">Download Flyer (PDF)</a>
+      <a href="/suite102-floorplan.pdf" target="_blank">View Floor Plan</a>
+    </div>
+    <iframe src="/suite102-flyer.pdf" width="100%" height="300" style="border-radius:8px;border:1px solid #ccd2e7;margin-top:12px;"></iframe>
+  </section>
+
+  <!-- Add more suites as needed (copy/paste a section, change images and details) -->
+
+  <section class="map-section" id="location-map">
+    <div class="map-title">Location Map</div>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2688.4168357935387!2d-122.24763072347556!3d47.9273998711788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490040759ee36e9%3A0x645eafc0a7ab5f8a!2s607%20Everett%20Mall%20Way%2C%20Everett%2C%20WA%2098204!5e0!3m2!1sen!2sus!4v1721590452098!5m2!1sen!2sus"
+      width="100%" height="280" frameborder="0" style="border-radius:12px;border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    <div style="margin-top:8px;">Steps from Everett Mall & Hwy 99 • High-traffic retail corridor</div>
+  </section>
+
+  <section class="downloads-section" id="downloads">
+    <strong>Property Downloads</strong>
+    <div style="margin-top:14px;">
+      <a href="/property-flyer.pdf" target="_blank">Download Property Flyer (PDF)</a>
+      <a href="/property-siteplan.pdf" target="_blank">Download Site Plan (PDF)</a>
+      <a href="/property-floorplan.pdf" target="_blank">Download Floor Plan (PDF)</a>
+    </div>
+  </section>
+</body>
 </html>
