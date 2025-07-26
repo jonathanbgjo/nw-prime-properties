@@ -9,14 +9,44 @@
     body { font-family: 'Inter', Arial, sans-serif; background: #f6f8fa; margin:0; }
     .property-header { text-align:center; margin-top:32px; }
     .main-address { color: #2176ff; font-size:1.2em; margin-bottom:12px; }
-    .suite-section {
-      background:#fff; max-width:760px; margin:32px auto; border-radius:16px;
-      box-shadow:0 4px 18px rgba(40,90,120,.07);
-      padding:36px 30px 28px 30px; position:relative;
+    .tab-container {
+      max-width: 760px;
+      margin: 36px auto 0 auto;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 18px rgba(40,90,120,.07);
+      padding: 0 0 28px 0;
     }
-    .suite-title { font-size:1.5em; font-weight:700; color:#2176ff; margin-bottom:10px; }
+    .tab-buttons {
+      display: flex;
+      border-bottom: 1px solid #e0e6f1;
+      background: #f7fafc;
+      border-radius: 16px 16px 0 0;
+      overflow-x: auto;
+    }
+    .tab-btn {
+      flex: 1;
+      padding: 20px 0;
+      border: none;
+      background: none;
+      font-size: 1.08em;
+      font-weight: 600;
+      color: #2176ff;
+      cursor: pointer;
+      transition: background 0.12s, color 0.12s;
+      border-radius: 16px 16px 0 0;
+    }
+    .tab-btn.active, .tab-btn:focus {
+      background: #fff;
+      color: #1549a4;
+      border-bottom: 2.5px solid #2176ff;
+    }
+    .tab-panel { display: none; padding: 32px 36px 0 36px; animation: fadeIn 0.3s;}
+    .tab-panel.active { display: block; }
+    @keyframes fadeIn { from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:none;} }
+    .suite-title { font-size:1.3em; font-weight:700; color:#2176ff; margin-bottom:10px; }
     .suite-info { margin-bottom:16px; }
-    .suite-gallery { display:flex; gap:12px; margin-bottom:18px; }
+    .suite-gallery { display:flex; gap:12px; margin-bottom:18px; flex-wrap: wrap; }
     .suite-gallery img { width:120px; height:90px; object-fit:cover; border-radius:9px; box-shadow:0 2px 8px rgba(50,90,120,.09);}
     .suite-links a {
       display:inline-block; margin-right:14px; margin-bottom:8px;
@@ -41,8 +71,9 @@
     }
     .downloads-section a:hover { background:#1741a6; }
     @media (max-width:780px){
-      .suite-section, .map-section, .downloads-section{padding:18px 3vw;}
+      .tab-panel{padding:18px 3vw 0 3vw;}
       .suite-gallery img { width:80px; height:56px;}
+      .map-section, .downloads-section{padding:18px 3vw;}
     }
   </style>
 </head>
@@ -62,48 +93,55 @@
     </div>
   </div>
 
-  <!-- Suite 101 Example -->
-  <section class="suite-section" id="suite-101">
-    <div class="suite-title">Suite 101</div>
-    <div class="suite-info">
-      <strong>1,200 sq ft | $18/sqft/yr (NNN)</strong><br>
-      Bright storefront, direct access from parking lot, new HVAC.<br>
-      Ideal for retail, service, or quick-serve restaurant.
+  <!-- Tabbed Suite Sections -->
+  <div class="tab-container">
+    <div class="tab-buttons">
+      <button class="tab-btn active" onclick="showTab(event, 'suite101')">Suite 101</button>
+      <button class="tab-btn" onclick="showTab(event, 'suite102')">Suite 102</button>
+      <!-- Add more suite buttons here -->
     </div>
-    <div class="suite-gallery">
-      <img src="images/suite101-int.jpg" alt="Suite 101 interior">
-      <img src="images/suite101-plan.jpg" alt="Suite 101 floor plan">
-      <!-- Add more images as needed -->
+    <div id="suite101" class="tab-panel active">
+      <div class="suite-title">Suite 101</div>
+      <div class="suite-info">
+        <strong>1,200 sq ft | $18/sqft/yr (NNN)</strong><br>
+        Bright storefront, direct access from parking lot, new HVAC.<br>
+        Ideal for retail, service, or quick-serve restaurant.
+      </div>
+      <div class="suite-gallery">
+        <img src="./images/IMG_3458.jpg" alt="Front Left" />
+        <img src="./images/IMG_0187.jpg" alt="Middle" />
+        <img src="./images/IMG_0152.jpg" alt="Signage" />
+        <img src="./images/map.jpg" alt="Map" />
+      </div>
+      <div class="suite-links">
+        <a href="./images/suite101-flyer.pdf" target="_blank">Download Flyer (PDF)</a>
+        <a href="./images/suite101-floorplan.pdf" target="_blank">View Floor Plan</a>
+      </div>
+      <iframe src="./images/suite101-flyer.pdf" width="100%" height="300" style="border-radius:8px;border:1px solid #ccd2e7;margin-top:12px;"></iframe>
     </div>
-    <div class="suite-links">
-      <a href="/suite101-flyer.pdf" target="_blank">Download Flyer (PDF)</a>
-      <a href="/suite101-floorplan.pdf" target="_blank">View Floor Plan</a>
+    <div id="suite102" class="tab-panel">
+      <div class="suite-title">Suite 102</div>
+      <div class="suite-info">
+        <strong>1,800 sq ft | $17/sqft/yr (NNN)</strong><br>
+        End-cap, high signage visibility, lots of natural light.<br>
+        Ready for build-out—great for fitness, retail, or food concepts.
+      </div>
+      <div class="suite-gallery">
+        <img src="./images/IMG_3458.jpg" alt="Front Left" />
+        <img src="./images/IMG_0187.jpg" alt="Middle" />
+        <img src="./images/IMG_0152.jpg" alt="Signage" />
+        <img src="./images/map.jpg" alt="Map" />
+      </div>
+      <div class="suite-links">
+        <a href="./images/suite102-flyer.pdf" target="_blank">Download Flyer (PDF)</a>
+        <a href="./images/suite102-floorplan.pdf" target="_blank">View Floor Plan</a>
+      </div>
+      <iframe src="./images/suite102-flyer.pdf" width="100%" height="300" style="border-radius:8px;border:1px solid #ccd2e7;margin-top:12px;"></iframe>
     </div>
-    <!-- Embedded flyer or floor plan example -->
-    <iframe src="/suite101-flyer.pdf" width="100%" height="300" style="border-radius:8px;border:1px solid #ccd2e7;margin-top:12px;"></iframe>
-  </section>
+    <!-- Add more suite panels as needed -->
+  </div>
 
-  <!-- Suite 102 Example -->
-  <section class="suite-section" id="suite-102">
-    <div class="suite-title">Suite 102</div>
-    <div class="suite-info">
-      <strong>1,800 sq ft | $17/sqft/yr (NNN)</strong><br>
-      End-cap, high signage visibility, lots of natural light.<br>
-      Ready for build-out—great for fitness, retail, or food concepts.
-    </div>
-    <div class="suite-gallery">
-      <img src="images/suite102-int.jpg" alt="Suite 102 interior">
-      <img src="images/suite102-plan.jpg" alt="Suite 102 floor plan">
-    </div>
-    <div class="suite-links">
-      <a href="/suite102-flyer.pdf" target="_blank">Download Flyer (PDF)</a>
-      <a href="/suite102-floorplan.pdf" target="_blank">View Floor Plan</a>
-    </div>
-    <iframe src="/suite102-flyer.pdf" width="100%" height="300" style="border-radius:8px;border:1px solid #ccd2e7;margin-top:12px;"></iframe>
-  </section>
-
-  <!-- Add more suites as needed (copy/paste a section, change images and details) -->
-
+  <!-- General Map Section -->
   <section class="map-section" id="location-map">
     <div class="map-title">Location Map</div>
     <iframe
@@ -112,13 +150,23 @@
     <div style="margin-top:8px;">Steps from Everett Mall & Hwy 99 • High-traffic retail corridor</div>
   </section>
 
+  <!-- General Downloads Section -->
   <section class="downloads-section" id="downloads">
     <strong>Property Downloads</strong>
     <div style="margin-top:14px;">
-      <a href="/property-flyer.pdf" target="_blank">Download Property Flyer (PDF)</a>
-      <a href="/property-siteplan.pdf" target="_blank">Download Site Plan (PDF)</a>
-      <a href="/property-floorplan.pdf" target="_blank">Download Floor Plan (PDF)</a>
+      <a href="./images/property-flyer.pdf" target="_blank">Download Property Flyer (PDF)</a>
+      <a href="./images/property-siteplan.pdf" target="_blank">Download Site Plan (PDF)</a>
+      <a href="./images/property-floorplan.pdf" target="_blank">Download Floor Plan (PDF)</a>
     </div>
   </section>
+
+  <script>
+    function showTab(evt, id) {
+      document.querySelectorAll('.tab-panel').forEach(el => el.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      evt.target.classList.add('active');
+    }
+  </script>
 </body>
 </html>
