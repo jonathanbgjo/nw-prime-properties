@@ -5,42 +5,25 @@
   <title>NW Prime Properties – Everett Mall Strip Center</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Swiper for gallery -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
   <style>
     body { font-family: 'Inter', Arial, sans-serif; background: #f6f8fa; margin:0; }
-    .property-header { text-align:center; margin-top:32px; }
-    .main-address { color: #2176ff; font-size:1.2em; margin-bottom:12px; }
+    .property-header { text-align:center; margin-top:28px; }
+    .main-address { color: #2176ff; font-size:1.15em; margin-bottom:10px; }
+    .swiper { width:97vw; max-width:760px; border-radius:18px; overflow: hidden; margin:18px auto 0 auto; box-shadow: 0 3px 19px rgba(40,70,120,0.12);}
+    .swiper-slide img { width: 100%; height: 290px; object-fit: cover; }
     .tab-container {
-      max-width: 760px;
-      margin: 36px auto 0 auto;
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 18px rgba(40,90,120,.07);
+      max-width: 760px; margin: 38px auto 0 auto;
+      background: #fff; border-radius: 16px; box-shadow: 0 4px 18px rgba(40,90,120,.07);
       padding: 0 0 28px 0;
     }
-    .tab-buttons {
-      display: flex;
-      border-bottom: 1px solid #e0e6f1;
-      background: #f7fafc;
-      border-radius: 16px 16px 0 0;
-      overflow-x: auto;
-    }
+    .tab-buttons { display: flex; border-bottom: 1px solid #e0e6f1; background: #f7fafc; border-radius: 16px 16px 0 0; overflow-x: auto; }
     .tab-btn {
-      flex: 1;
-      padding: 20px 0;
-      border: none;
-      background: none;
-      font-size: 1.08em;
-      font-weight: 600;
-      color: #2176ff;
-      cursor: pointer;
-      transition: background 0.12s, color 0.12s;
-      border-radius: 16px 16px 0 0;
+      flex: 1; padding: 20px 0; border: none; background: none; font-size: 1.08em; font-weight: 600; color: #2176ff;
+      cursor: pointer; transition: background 0.12s, color 0.12s; border-radius: 16px 16px 0 0;
     }
-    .tab-btn.active, .tab-btn:focus {
-      background: #fff;
-      color: #1549a4;
-      border-bottom: 2.5px solid #2176ff;
-    }
+    .tab-btn.active, .tab-btn:focus { background: #fff; color: #1549a4; border-bottom: 2.5px solid #2176ff; }
     .tab-panel { display: none; padding: 32px 36px 0 36px; animation: fadeIn 0.3s;}
     .tab-panel.active { display: block; }
     @keyframes fadeIn { from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:none;} }
@@ -49,31 +32,38 @@
     .suite-gallery { display:flex; gap:12px; margin-bottom:18px; flex-wrap: wrap; }
     .suite-gallery img { width:120px; height:90px; object-fit:cover; border-radius:9px; box-shadow:0 2px 8px rgba(50,90,120,.09);}
     .suite-links a {
-      display:inline-block; margin-right:14px; margin-bottom:8px;
-      background:#2176ff; color:#fff; padding:7px 18px; border-radius:7px; font-weight:600; text-decoration:none;
-      box-shadow:0 2px 6px rgba(33,118,255,0.07);
+      display:inline-block; margin-right:14px; margin-bottom:8px; background:#2176ff; color:#fff; padding:7px 18px;
+      border-radius:7px; font-weight:600; text-decoration:none; box-shadow:0 2px 6px rgba(33,118,255,0.07);
     }
     .suite-links a:hover { background:#1741a6; }
     .map-section {
       background:#fff; max-width:760px; margin:38px auto; border-radius:16px; box-shadow:0 4px 18px rgba(40,90,120,.07);
-      padding:36px 30px 28px 30px; position:relative;
-      text-align: center;
+      padding:36px 30px 28px 30px; position:relative; text-align: center;
     }
     .map-title { font-size:1.2em; font-weight:700; color:#2176ff; margin-bottom:10px; }
-    .downloads-section {
-      background:#fff; max-width:760px; margin:38px auto 48px auto; border-radius:16px; box-shadow:0 4px 18px rgba(40,90,120,.07);
-      padding:32px 30px 22px 30px; position:relative; text-align:center;
+    .contact-section {
+      background: #fff; max-width: 760px; margin: 38px auto; border-radius: 16px; box-shadow: 0 4px 18px rgba(40,90,120,.07);
+      padding: 28px 30px 18px 30px; position: relative;
     }
-    .downloads-section a {
-      display:inline-block; margin:7px 14px; background:#2563eb; color:#fff;
-      padding:9px 22px; border-radius:8px; font-weight:600; text-decoration:none;
-      box-shadow:0 2px 8px rgba(37,99,235,0.08);
+    .contact-section h2 { color: #2176ff; }
+    .contact-form { display: flex; flex-direction: column; gap: 11px; max-width: 420px; margin: 0 auto;}
+    .contact-form input, .contact-form textarea {
+      padding: 11px 12px; border-radius: 7px; border: 1px solid #c9d1e5; font-size: 1em; font-family: inherit; resize: vertical;
     }
-    .downloads-section a:hover { background:#1741a6; }
+    .contact-form button {
+      background: #2176ff; color: #fff; font-weight: 600; border: none; border-radius: 8px; padding: 13px 28px;
+      font-size: 1.09em; cursor: pointer; transition: background 0.18s; margin-top: 8px;
+    }
+    .contact-form button:hover { background: #1741a6; }
+    .footer {
+      background: #1b2742; color: #c8d0e7; text-align: center; padding: 26px 0 18px 0;
+      font-size: 1em; letter-spacing: .04em; margin-top: 48px;
+    }
+    .footer a { color: #8ecaff; text-decoration: underline; margin: 0 7px; }
     @media (max-width:780px){
-      .tab-panel{padding:18px 3vw 0 3vw;}
+      .tab-panel, .map-section, .contact-section{padding:18px 3vw;}
+      .swiper-slide img { height:150px;}
       .suite-gallery img { width:80px; height:56px;}
-      .map-section, .downloads-section{padding:18px 3vw;}
     }
   </style>
 </head>
@@ -84,13 +74,17 @@
     <div style="margin-bottom:12px;">
       <strong>Prime Retail/Restaurant Spaces Available</strong>
     </div>
-    <div>
-      <img src="images/property-front.jpg" alt="Property front" style="width:98%;max-width:740px;border-radius:15px;box-shadow:0 3px 19px rgba(40,70,120,0.13);margin-bottom:10px;">
+  </div>
+  <!-- Swiper Gallery at the top -->
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="./images/IMG_3458.jpg" alt="Front Left" /></div>
+      <div class="swiper-slide"><img src="./images/IMG_0187.jpg" alt="Middle" /></div>
+      <div class="swiper-slide"><img src="./images/IMG_0152.jpg" alt="Signage" /></div>
+      <div class="swiper-slide"><img src="./images/map.jpg" alt="Map" /></div>
+      <!-- Add more images as needed -->
     </div>
-    <div>
-      High-visibility, flexible layouts, ample parking, and excellent Everett Mall location.<br>
-      Contact: <a href="mailto:jonathanbgjo@gmail.com">jonathanbgjo@gmail.com</a> | 425-443-1002
-    </div>
+    <div class="swiper-pagination"></div>
   </div>
 
   <!-- Tabbed Suite Sections -->
@@ -150,17 +144,41 @@
     <div style="margin-top:8px;">Steps from Everett Mall & Hwy 99 • High-traffic retail corridor</div>
   </section>
 
-  <!-- General Downloads Section -->
-  <section class="downloads-section" id="downloads">
-    <strong>Property Downloads</strong>
-    <div style="margin-top:14px;">
-      <a href="./images/property-flyer.pdf" target="_blank">Download Property Flyer (PDF)</a>
-      <a href="./images/property-siteplan.pdf" target="_blank">Download Site Plan (PDF)</a>
-      <a href="./images/property-floorplan.pdf" target="_blank">Download Floor Plan (PDF)</a>
+  <!-- Contact Form Section -->
+  <section class="contact-section" id="contact">
+    <h2>Contact & Leasing Inquiry</h2>
+    <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="name" required placeholder="Your Name">
+      <input type="email" name="email" required placeholder="Your Email">
+      <textarea name="message" required rows="4" placeholder="Your Message (suite, business type, etc.)"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div style="font-size:0.92em; color:#7284a8; margin-top:10px;">
+      Or contact: <a href="mailto:jonathanbgjo@gmail.com">jonathanbgjo@gmail.com</a> | 425-443-1002
     </div>
   </section>
 
+  <!-- Footer Section -->
+  <footer class="footer">
+    NW Prime Properties – Everett Mall Strip Center<br>
+    607 Everett Mall Way, Everett, WA 98208 &nbsp;|&nbsp; &copy; 2025 Jonathan E. Jo
+    <br>
+    <a href="mailto:jonathanbgjo@gmail.com">Contact</a>
+    <!-- Optional: <a href="#">Privacy Policy</a> | <a href="#">Leasing Info</a> -->
+  </footer>
+
+  <!-- Swiper JS for gallery -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   <script>
+    // Swiper gallery at the top
+    var swiper = new Swiper('.swiper', {
+      pagination: { el: '.swiper-pagination', clickable: true },
+      slidesPerView: 1,
+      loop: true,
+      autoplay: { delay: 3700, disableOnInteraction: false }
+    });
+
+    // Tabs JS
     function showTab(evt, id) {
       document.querySelectorAll('.tab-panel').forEach(el => el.classList.remove('active'));
       document.getElementById(id).classList.add('active');
