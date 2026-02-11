@@ -1,469 +1,2033 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>NW Prime Properties – Everett Mall Strip Center</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Swiper for gallery -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
-    />
-    <style>
-      body {
-        font-family: "Inter", Arial, sans-serif;
-        background: linear-gradient(120deg, #eef1f6 0%, #f6f8fa 100%);
-        margin: 0;
-        color: #1b213a;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <title>NW Prime Properties – Prime Retail &amp; Restaurant Space | 607 Everett Mall Way</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Prime retail and restaurant spaces for lease at 607 Everett Mall Way, Everett, WA. 1,200-1,800 sq ft suites available with high visibility and traffic. Contact NW Prime Properties today." />
+  <meta property="og:title" content="NW Prime Properties – Everett Mall Strip Center" />
+  <meta property="og:description" content="Prime retail and restaurant spaces for lease at 607 Everett Mall Way, Everett, WA. 1,200-1,800 sq ft suites available." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nwprimeproperties.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NW Prime Properties – Everett Mall Strip Center" />
+  <meta name="twitter:description" content="Prime retail and restaurant spaces for lease at 607 Everett Mall Way, Everett, WA." />
+  <link rel="canonical" href="https://nwprimeproperties.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
-      .property-header {
-        background: linear-gradient(90deg, #2563eb 0%, #2176ff 100%);
-        color: #fff;
-        padding: 40px 0 28px 0;
-        text-align: center;
-        box-shadow: 0 8px 30px rgba(37, 99, 235, 0.08);
-        border-bottom-left-radius: 28px;
-        border-bottom-right-radius: 28px;
-      }
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "NW Prime Properties",
+    "description": "Prime retail and restaurant spaces for lease at Everett Mall Strip Center",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "607 Everett Mall Way",
+      "addressLocality": "Everett",
+      "addressRegion": "WA",
+      "postalCode": "98208",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-425-443-1002",
+    "email": "jonathanbgjo@gmail.com",
+    "url": "https://nwprimeproperties.com"
+  }
+  </script>
 
-      .property-header h1 {
-        margin: 0 0 8px 0;
-        font-size: 2.5em;
-        letter-spacing: 1px;
-        font-weight: 700;
-      }
+  <style>
+    /* ========================================
+       CSS CUSTOM PROPERTIES
+       ======================================== */
+    :root {
+      --blue-600: #2563eb;
+      --blue-500: #2176ff;
+      --blue-700: #1d4ed8;
+      --blue-800: #1e3a8a;
+      --blue-900: #172554;
+      --amber-400: #fbbf24;
+      --amber-500: #f59e0b;
+      --amber-600: #d97706;
+      --emerald-500: #10b981;
+      --emerald-600: #059669;
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-300: #cbd5e1;
+      --slate-400: #94a3b8;
+      --slate-500: #64748b;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+      --slate-900: #0f172a;
+      --white: #ffffff;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.10);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+      --shadow-xl: 0 12px 48px rgba(0,0,0,0.15);
+      --transition-fast: 0.18s ease;
+      --transition-base: 0.25s ease;
+      --transition-slow: 0.3s ease;
+      --font-sans: 'Inter', Arial, sans-serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --max-width: 880px;
+    }
 
-      .main-address {
-        font-size: 1.17em;
-        margin-bottom: 12px;
-        color: #f0f7ff;
-        font-weight: 500;
-      }
+    /* ========================================
+       RESET & BASE
+       ======================================== */
+    *, *::before, *::after { box-sizing: border-box; }
 
-      .property-header strong {
-        font-size: 1.1em;
-        color: #c6e2ff;
-      }
+    html { scroll-behavior: smooth; }
 
-      .swiper {
-        width: 97vw;
-        max-width: 820px;
-        border-radius: 22px;
-        overflow: hidden;
-        margin: 24px auto 0 auto;
-        box-shadow: 0 5px 24px rgba(37, 99, 235, 0.17);
-      }
+    body {
+      font-family: var(--font-sans);
+      background: var(--slate-50);
+      margin: 0;
+      color: var(--slate-800);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-      .swiper-slide img {
-        width: 100%;
-        height: 330px;
-        object-fit: cover;
-      }
+    img { max-width: 100%; height: auto; }
 
-      .tab-container {
-        max-width: 840px;
-        margin: 44px auto 0 auto;
-        background: rgba(255, 255, 255, 0.98);
-        border-radius: 18px;
-        box-shadow: 0 8px 32px rgba(40, 90, 160, 0.13);
-        padding: 0 0 32px 0;
-        backdrop-filter: blur(3px);
-      }
+    h1, h2, h3, h4 {
+      font-family: var(--font-serif);
+      line-height: 1.2;
+    }
 
-      .tab-buttons {
-        display: flex;
-        border-bottom: 2px solid #e0e6f1;
-        background: linear-gradient(90deg, #f7fafc 0%, #e6f1fc 100%);
-        border-radius: 18px 18px 0 0;
-        overflow-x: auto;
-      }
+    /* ========================================
+       ACCESSIBILITY
+       ======================================== */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
 
-      .tab-btn {
-        flex: 1;
-        padding: 22px 0;
-        border: none;
-        background: none;
-        font-size: 1.11em;
-        font-weight: 700;
-        color: #2563eb;
-        cursor: pointer;
-        transition: background 0.12s, color 0.12s;
-        border-radius: 18px 18px 0 0;
-        letter-spacing: 0.02em;
-        outline: none;
-      }
-      .tab-btn.active,
-      .tab-btn:focus {
-        background: #f5faff;
-        color: #17335c;
-        border-bottom: 3px solid #2176ff;
-      }
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 16px;
+      z-index: 10000;
+      padding: 12px 24px;
+      background: var(--blue-600);
+      color: var(--white);
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: top var(--transition-fast);
+    }
+    .skip-link:focus {
+      top: 16px;
+    }
 
+    *:focus-visible {
+      outline: 3px solid var(--blue-500);
+      outline-offset: 2px;
+    }
+
+    /* ========================================
+       HERO / HEADER
+       ======================================== */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-700) 50%, var(--blue-500) 100%);
+      color: var(--white);
+      padding: 56px 24px 48px;
+      text-align: center;
+      overflow: hidden;
+      border-bottom-left-radius: var(--radius-xl);
+      border-bottom-right-radius: var(--radius-xl);
+    }
+
+    /* Dot-grid texture */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+
+    /* Glow orb */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -40px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(245,158,11,0.18) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .now-leasing-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 6px 18px;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      backdrop-filter: blur(8px);
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--emerald-500);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(16,185,129,0.5); }
+      50% { opacity: 0.8; box-shadow: 0 0 0 8px rgba(16,185,129,0); }
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 800;
+      margin: 0 0 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-address {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 24px;
+    }
+
+    /* ========================================
+       BUTTONS
+       ======================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 13px 28px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all var(--transition-fast);
+      letter-spacing: 0.01em;
+    }
+
+    .btn-amber {
+      background: linear-gradient(135deg, var(--amber-500) 0%, var(--amber-600) 100%);
+      color: var(--slate-900);
+      box-shadow: 0 4px 14px rgba(245,158,11,0.3);
+    }
+    .btn-amber:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(245,158,11,0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.4);
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.7);
+      transform: translateY(-1px);
+    }
+
+    .btn-blue {
+      background: linear-gradient(135deg, var(--blue-600) 0%, var(--blue-500) 100%);
+      color: var(--white);
+      box-shadow: 0 4px 14px rgba(37,99,235,0.25);
+    }
+    .btn-blue:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37,99,235,0.35);
+    }
+
+    .btn-outline-blue {
+      background: transparent;
+      color: var(--blue-600);
+      border: 2px solid var(--blue-600);
+    }
+    .btn-outline-blue:hover {
+      background: var(--blue-600);
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ========================================
+       STATS BAR
+       ======================================== */
+    .stats-bar {
+      max-width: var(--max-width);
+      margin: -28px auto 0;
+      padding: 0 16px;
+      position: relative;
+      z-index: 2;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      box-shadow: var(--shadow-lg);
+    }
+    .stat-card {
+      text-align: center;
+      padding: 8px 4px;
+    }
+    .stat-icon {
+      width: 40px;
+      height: 40px;
+      margin: 0 auto 8px;
+      background: rgba(37,99,235,0.08);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .stat-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--blue-600);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .stat-value {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--slate-900);
+      line-height: 1.2;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--slate-500);
+      font-weight: 500;
+      margin-top: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ========================================
+       SWIPER GALLERY
+       ======================================== */
+    .gallery-section {
+      max-width: var(--max-width);
+      margin: 36px auto 0;
+      padding: 0 16px;
+    }
+
+    .swiper {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .swiper-slide {
+      overflow: hidden;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
+      animation: kenburns 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes kenburns {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.06); }
+    }
+
+    .swiper-slide::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+      color: var(--white) !important;
+      background: rgba(0,0,0,0.3);
+      width: 44px !important;
+      height: 44px !important;
+      border-radius: 50%;
+      backdrop-filter: blur(4px);
+      transition: background var(--transition-fast);
+    }
+    .swiper-button-next:hover, .swiper-button-prev:hover {
+      background: rgba(0,0,0,0.5);
+    }
+    .swiper-button-next::after, .swiper-button-prev::after {
+      font-size: 18px !important;
+      font-weight: 700;
+    }
+
+    .swiper-pagination-bullet {
+      background: var(--white) !important;
+      opacity: 0.5 !important;
+    }
+    .swiper-pagination-bullet-active {
+      opacity: 1 !important;
+      background: var(--amber-500) !important;
+    }
+
+    /* ========================================
+       TRUST INDICATORS
+       ======================================== */
+    .trust-strip {
+      max-width: var(--max-width);
+      margin: 32px auto 0;
+      padding: 0 16px;
+    }
+    .trust-grid {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      padding: 10px 20px;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--slate-700);
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+    .trust-badge:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .trust-badge svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    /* ========================================
+       SECTION COMMON
+       ======================================== */
+    .section-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .section-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      font-weight: 700;
+      color: var(--slate-900);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .section-subheading {
+      text-align: center;
+      color: var(--slate-500);
+      font-size: 0.95rem;
+      margin-bottom: 32px;
+    }
+
+    /* ========================================
+       PROPERTY HIGHLIGHTS
+       ======================================== */
+    .highlights-section {
+      margin-top: 48px;
+    }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .highlight-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--slate-100);
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+    .highlight-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .highlight-icon {
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 14px;
+      background: rgba(37,99,235,0.08);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .highlight-icon svg {
+      width: 26px;
+      height: 26px;
+      stroke: var(--blue-600);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .highlight-card h3 {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--slate-800);
+      margin: 0 0 6px;
+    }
+    .highlight-card p {
+      font-size: 0.87rem;
+      color: var(--slate-500);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* ========================================
+       TAB CONTAINER / SUITES
+       ======================================== */
+    .suites-section {
+      margin-top: 56px;
+    }
+
+    .tab-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+
+    .tab-buttons {
+      display: flex;
+      position: relative;
+      background: var(--slate-50);
+      border-bottom: 2px solid var(--slate-200);
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 20px 16px;
+      border: none;
+      background: none;
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--slate-500);
+      cursor: pointer;
+      transition: color var(--transition-fast);
+      position: relative;
+    }
+    .tab-btn:hover { color: var(--blue-600); }
+
+    .tab-btn.active {
+      color: var(--blue-600);
+    }
+    .tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 20%;
+      right: 20%;
+      height: 3px;
+      background: var(--blue-600);
+      border-radius: 3px 3px 0 0;
+      animation: slideIn 0.25s ease;
+    }
+
+    @keyframes slideIn {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+
+    .tab-panel {
+      display: none;
+      padding: 36px 40px;
+      animation: fadeIn 0.3s ease;
+    }
+    .tab-panel.active { display: block; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    /* Suite header */
+    .suite-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .suite-title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--slate-900);
+      margin: 0;
+    }
+
+    .availability-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16,185,129,0.1);
+      color: var(--emerald-600);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* Price callout */
+    .price-callout {
+      background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(37,99,235,0.02) 100%);
+      border: 1px solid rgba(37,99,235,0.12);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: center;
+    }
+    .price-item {
+      text-align: center;
+    }
+    .price-item .label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--slate-500);
+      font-weight: 600;
+    }
+    .price-item .value {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--blue-700);
+    }
+    .price-divider {
+      width: 1px;
+      height: 40px;
+      background: var(--slate-200);
+    }
+
+    /* Suite detail rows */
+    .suite-detail-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      color: var(--slate-700);
+      font-size: 0.92rem;
+    }
+    .suite-detail-row svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--blue-600);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    .suite-divider {
+      height: 1px;
+      background: var(--slate-100);
+      margin: 20px 0;
+    }
+
+    /* Feature checklist */
+    .features-title {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--slate-800);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 20px;
+      margin-bottom: 20px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: var(--slate-700);
+    }
+    .feature-check {
+      width: 20px;
+      height: 20px;
+      background: rgba(16,185,129,0.1);
+      color: var(--emerald-600);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Ideal for chips */
+    .ideal-for { margin-bottom: 20px; }
+    .ideal-for .label {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--slate-600);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .chip-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .chip {
+      background: var(--slate-100);
+      color: var(--slate-700);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 100px;
+      transition: background var(--transition-fast);
+    }
+    .chip:hover {
+      background: var(--slate-200);
+    }
+
+    /* Suite gallery */
+    .suite-gallery {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .suite-gallery img {
+      width: 140px;
+      height: 105px;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+      border: 2px solid var(--slate-100);
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+      cursor: pointer;
+    }
+    .suite-gallery img:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Suite links */
+    .suite-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    /* PDF embed */
+    .pdf-embed {
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--slate-200);
+      margin-top: 12px;
+      background: var(--slate-50);
+    }
+
+    /* ========================================
+       WHY THIS LOCATION
+       ======================================== */
+    .location-section {
+      margin-top: 56px;
+      background: linear-gradient(135deg, var(--slate-900) 0%, var(--slate-800) 100%);
+      padding: 56px 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .location-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 24px 24px;
+      pointer-events: none;
+    }
+
+    .location-section .section-heading { color: var(--white); }
+    .location-section .section-subheading { color: var(--slate-400); }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: var(--max-width);
+      margin: 0 auto 32px;
+    }
+
+    .location-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-md);
+      padding: 24px 20px;
+      text-align: center;
+      backdrop-filter: blur(4px);
+      transition: transform var(--transition-base), background var(--transition-base);
+    }
+    .location-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255,255,255,0.1);
+    }
+    .location-card h3 {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--white);
+      margin: 12px 0 6px;
+    }
+    .location-card p {
+      font-size: 0.82rem;
+      color: var(--slate-400);
+      margin: 0;
+      line-height: 1.4;
+    }
+    .location-card-icon {
+      width: 44px;
+      height: 44px;
+      margin: 0 auto;
+      background: rgba(245,158,11,0.15);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .location-card-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--amber-400);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .anchors-section {
+      text-align: center;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .anchors-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--slate-400);
+      margin-bottom: 12px;
+    }
+    .anchor-chip {
+      display: inline-block;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.8);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin: 4px;
+    }
+
+    /* ========================================
+       MAP SECTION
+       ======================================== */
+    .map-section {
+      max-width: var(--max-width);
+      margin: 56px auto 0;
+      padding: 0 16px;
+    }
+
+    .map-wrapper {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .map-wrapper iframe {
+      width: 100%;
+      height: 320px;
+      border: 0;
+      border-radius: var(--radius-md);
+    }
+
+    .map-address {
+      text-align: center;
+      margin-top: 12px;
+      color: var(--slate-500);
+      font-size: 0.9rem;
+    }
+
+    /* ========================================
+       FAQ ACCORDION
+       ======================================== */
+    .faq-section {
+      margin-top: 56px;
+    }
+
+    .faq-list {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--slate-100);
+      border-radius: var(--radius-md);
+      margin-bottom: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--transition-fast);
+    }
+    .faq-item:hover { box-shadow: var(--shadow-md); }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 24px;
+      background: none;
+      border: none;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--slate-800);
+      cursor: pointer;
+      text-align: left;
+      gap: 12px;
+    }
+    .faq-question:hover {
+      color: var(--blue-600);
+    }
+
+    .faq-chevron {
+      width: 20px;
+      height: 20px;
+      stroke: var(--slate-400);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform var(--transition-fast);
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height var(--transition-slow);
+    }
+    .faq-answer-inner {
+      padding: 0 24px 18px;
+      font-size: 0.9rem;
+      color: var(--slate-600);
+      line-height: 1.6;
+    }
+
+    /* ========================================
+       CONTACT SECTION
+       ======================================== */
+    .contact-section {
+      margin-top: 56px;
+      max-width: var(--max-width);
+      padding: 0 16px;
+    }
+
+    .contact-wrapper {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .contact-form label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--slate-600);
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--slate-200);
+      font-size: 0.95rem;
+      font-family: var(--font-sans);
+      background: var(--slate-50);
+      color: var(--slate-800);
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus,
+    .contact-form select:focus {
+      border-color: var(--blue-500);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+      outline: none;
+    }
+    .contact-form textarea { resize: vertical; }
+
+    .contact-form select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 36px;
+    }
+
+    .contact-alt {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.88rem;
+      color: var(--slate-500);
+    }
+    .contact-alt a {
+      color: var(--blue-600);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact-alt a:hover {
+      text-decoration: underline;
+    }
+
+    /* ========================================
+       FOOTER
+       ======================================== */
+    .footer {
+      background: linear-gradient(135deg, var(--slate-900) 0%, var(--slate-800) 100%);
+      color: var(--slate-400);
+      padding: 48px 24px 0;
+      margin-top: 64px;
+      border-top-left-radius: var(--radius-xl);
+      border-top-right-radius: var(--radius-xl);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-brand h3 {
+      font-family: var(--font-serif);
+      color: var(--white);
+      font-size: 1.2rem;
+      margin: 0 0 10px;
+    }
+    .footer-brand p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin: 0 0 12px;
+    }
+    .footer-brand address {
+      font-style: normal;
+      font-size: 0.85rem;
+    }
+
+    .footer-heading {
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin: 0 0 16px;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-links li { margin-bottom: 10px; }
+    .footer-links a {
+      color: var(--slate-400);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color var(--transition-fast);
+    }
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-contact p {
+      font-size: 0.88rem;
+      margin: 0 0 8px;
+    }
+    .footer-contact a {
+      color: var(--slate-400);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+    .footer-contact a:hover { color: var(--white); }
+
+    .footer-bottom {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.78rem;
+    }
+    .footer-disclaimer {
+      color: var(--slate-500);
+      font-size: 0.75rem;
+      max-width: 500px;
+      line-height: 1.4;
+    }
+
+    /* ========================================
+       FLOATING CTA
+       ======================================== */
+    .floating-cta {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      animation: floatIn 0.5s ease 1s both;
+    }
+    .floating-cta a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--amber-500), var(--amber-600));
+      color: var(--slate-900);
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 14px 24px;
+      border-radius: 100px;
+      text-decoration: none;
+      box-shadow: 0 6px 24px rgba(245,158,11,0.35);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+    .floating-cta a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(245,158,11,0.45);
+    }
+    .floating-cta svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    @keyframes floatIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ========================================
+       SCROLL REVEAL
+       ======================================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ========================================
+       RESPONSIVE
+       ======================================== */
+    @media (max-width: 880px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 20px;
+      }
+      .highlights-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .location-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
       .tab-panel {
-        display: none;
-        padding: 36px 46px 0 46px;
-        animation: fadeIn 0.3s;
-        background: rgba(255, 255, 255, 0.99);
-        border-radius: 0 0 18px 18px;
-        box-shadow: 0 1px 11px rgba(37, 99, 235, 0.07);
+        padding: 28px 24px;
       }
-      .tab-panel.active {
-        display: block;
+      .price-callout {
+        gap: 16px;
       }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: none;
-        }
+      .swiper-slide img {
+        height: 280px;
       }
+    }
 
-      .suite-title {
-        font-size: 1.29em;
-        font-weight: 700;
-        color: #2563eb;
-        margin-bottom: 10px;
+    @media (max-width: 640px) {
+      .hero {
+        padding: 40px 16px 36px;
       }
-      .suite-info {
-        margin-bottom: 16px;
-        color: #233e63;
+      .hero h1 { font-size: 1.6rem; }
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 16px;
       }
-      .suite-gallery {
-        display: flex;
-        gap: 14px;
-        margin-bottom: 20px;
-        flex-wrap: wrap;
+      .stat-value { font-size: 1.05rem; }
+      .highlights-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .location-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .tab-panel {
+        padding: 20px 16px;
+      }
+      .feature-list {
+        grid-template-columns: 1fr;
       }
       .suite-gallery img {
-        width: 128px;
-        height: 98px;
-        object-fit: cover;
-        border-radius: 12px;
-        box-shadow: 0 2px 10px rgba(37, 99, 235, 0.11);
-        border: 2.2px solid #edf4ff;
-        background: #f6faff;
+        width: 100px;
+        height: 75px;
       }
-
-      .suite-links a {
-        display: inline-block;
-        margin-right: 18px;
-        margin-bottom: 8px;
-        background: linear-gradient(90deg, #2563eb 0%, #2176ff 100%);
-        color: #fff;
-        padding: 10px 22px;
-        border-radius: 8px;
-        font-weight: 700;
-        text-decoration: none;
-        box-shadow: 0 3px 13px rgba(33, 118, 255, 0.07);
-        letter-spacing: 0.01em;
-        transition: background 0.18s;
+      .form-row {
+        grid-template-columns: 1fr;
       }
-      .suite-links a:hover {
-        background: linear-gradient(90deg, #1a2f60 0%, #2563eb 100%);
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
       }
-
-      iframe {
-        border-radius: 10px;
-        border: 1.5px solid #e6f1fc;
-        margin-top: 12px;
-        background: #f7fafc;
-      }
-
-      .map-section {
-        background: linear-gradient(90deg, #f7fafc 0%, #e6f1fc 100%);
-        max-width: 840px;
-        margin: 42px auto;
-        border-radius: 18px;
-        box-shadow: 0 8px 32px rgba(40, 90, 120, 0.07);
-        padding: 38px 32px 30px 32px;
-        position: relative;
-        text-align: center;
-      }
-      .map-title {
-        font-size: 1.16em;
-        font-weight: 700;
-        color: #2176ff;
-        margin-bottom: 10px;
-      }
-
-      .contact-section {
-        background: rgba(255, 255, 255, 0.98);
-        max-width: 840px;
-        margin: 42px auto;
-        border-radius: 18px;
-        box-shadow: 0 8px 32px rgba(40, 90, 120, 0.09);
-        padding: 28px 32px 18px 32px;
-        position: relative;
-      }
-
-      .contact-section h2 {
-        color: #2563eb;
-        font-weight: 800;
-        letter-spacing: 0.03em;
-        margin-bottom: 16px;
-      }
-      .contact-form {
-        display: flex;
+      .footer-bottom {
         flex-direction: column;
-        gap: 13px;
-        max-width: 420px;
-        margin: 0 auto;
-      }
-      .contact-form input,
-      .contact-form textarea {
-        padding: 13px 12px;
-        border-radius: 9px;
-        border: 1.4px solid #c9d1e5;
-        font-size: 1em;
-        font-family: inherit;
-        resize: vertical;
-        background: #f7fafc;
-        box-shadow: 0 1px 4px rgba(33, 118, 255, 0.04);
-      }
-      .contact-form button {
-        background: linear-gradient(90deg, #2563eb 0%, #2176ff 100%);
-        color: #fff;
-        font-weight: 700;
-        border: none;
-        border-radius: 9px;
-        padding: 14px 28px;
-        font-size: 1.1em;
-        cursor: pointer;
-        transition: background 0.18s;
-        margin-top: 8px;
-        box-shadow: 0 3px 10px rgba(33, 118, 255, 0.07);
-        letter-spacing: 0.02em;
-      }
-      .contact-form button:hover {
-        background: linear-gradient(90deg, #17335c 0%, #2563eb 100%);
-      }
-
-      .footer {
-        background: linear-gradient(90deg, #1b2742 0%, #17335c 100%);
-        color: #c8d0e7;
         text-align: center;
-        padding: 32px 0 20px 0;
-        font-size: 1em;
-        letter-spacing: 0.04em;
-        margin-top: 56px;
-        border-top-left-radius: 30px;
-        border-top-right-radius: 30px;
       }
-      .footer a {
-        color: #8ecaff;
-        text-decoration: underline;
-        margin: 0 7px;
+      .swiper-slide img {
+        height: 220px;
       }
-      @media (max-width: 880px) {
-        .tab-panel,
-        .map-section,
-        .contact-section {
-          padding: 18px 3vw;
-        }
-        .swiper-slide img {
-          height: 170px;
-        }
-        .suite-gallery img {
-          width: 80px;
-          height: 56px;
-        }
+      .contact-wrapper {
+        padding: 28px 20px;
       }
-      .contact-section h2 {
-        color: #2563eb;
-        font-weight: 800;
-        letter-spacing: 0.03em;
-        margin-bottom: 16px;
-        text-align: center; /* <--- This centers the heading */
+      .map-wrapper {
+        padding: 20px;
       }
-    </style>
-  </head>
-  <body>
-    <div class="property-header">
-      <h1>NW Prime Properties – Everett Mall Strip Center</h1>
-      <div class="main-address">607 Everett Mall Way, Everett, WA 98208</div>
-      <div style="margin-bottom: 12px">
-        <strong>Prime Retail/Restaurant Spaces Available</strong>
-      </div>
-    </div>
-    <!-- Swiper Gallery at the top -->
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="./images/IMG_3458.jpg" alt="Front Left" />
-        </div>
-        <div class="swiper-slide">
-          <img src="./images/IMG_0187.jpg" alt="Middle" />
-        </div>
-        <div class="swiper-slide">
-          <img src="./images/IMG_0152.jpg" alt="Signage" />
-        </div>
-        <div class="swiper-slide"><img src="./images/map.jpg" alt="Map" /></div>
-        <!-- Add more images as needed -->
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
+      .map-wrapper iframe { height: 240px; }
+      .price-callout {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+      }
+      .price-divider {
+        width: 100%;
+        height: 1px;
+      }
+    }
 
-    <!-- Tabbed Suite Sections -->
-    <div class="tab-container">
-      <div class="tab-buttons">
-        <button class="tab-btn active" onclick="showTab(event, 'suite101')">
-          Suite 101
-        </button>
-        <button class="tab-btn" onclick="showTab(event, 'suite102')">
-          Suite 102
-        </button>
-        <!-- Add more suite buttons here -->
-      </div>
-      <div id="suite101" class="tab-panel active">
-        <div class="suite-title">Suite 101</div>
-        <div class="suite-info">
-          <strong>1,200 sq ft | $18/sqft/yr (NNN)</strong><br />
-          Bright storefront, direct access from parking lot, new HVAC.<br />
-          Ideal for retail, service, or quick-serve restaurant.
-        </div>
-        <div class="suite-gallery">
-          <img src="./images/IMG_3458.jpg" alt="Front Left" />
-          <img src="./images/IMG_0187.jpg" alt="Middle" />
-          <img src="./images/IMG_0152.jpg" alt="Signage" />
-          <img src="./images/map.jpg" alt="Map" />
-        </div>
-        <div class="suite-links">
-          <a href="./images/Jo_Flyer2.pdf" target="_blank"
-            >Download Flyer (PDF)</a
-          >
-          <a href="./images/Jo_Flyer2.pdf" target="_blank"
-            >View Floor Plan</a
-          >
-        </div>
-        <iframe
-          src="./images/Jo_Flyer2.pdf"
-          width="100%"
-          height="300"
-          style="
-            border-radius: 8px;
-            border: 1px solid #ccd2e7;
-            margin-top: 12px;
-          "
-        ></iframe>
-      </div>
-      <div id="suite102" class="tab-panel">
-        <div class="suite-title">Suite 102</div>
-        <div class="suite-info">
-          <strong>1,800 sq ft | $17/sqft/yr (NNN)</strong><br />
-          End-cap, high signage visibility, lots of natural light.<br />
-          Ready for build-out—great for fitness, retail, or food concepts.
-        </div>
-        <div class="suite-gallery">
-          <img src="./images/IMG_3458.jpg" alt="Front Left" />
-          <img src="./images/IMG_0187.jpg" alt="Middle" />
-          <img src="./images/IMG_0152.jpg" alt="Signage" />
-          <img src="./images/map.jpg" alt="Map" />
-        </div>
-        <div class="suite-links">
-          <a href="./images/Jo_Flyer2.pdf" target="_blank"
-            >Download Flyer (PDF)</a
-          >
-          <a href="./images/Jo_Flyer2.pdf" target="_blank"
-            >View Floor Plan</a
-          >
-        </div>
-        <iframe
-          src="./images/Jo_Flyer2.pdf"
-          width="100%"
-          height="300"
-          style="
-            border-radius: 8px;
-            border: 1px solid #ccd2e7;
-            margin-top: 12px;
-          "
-        ></iframe>
-      </div>
-      <!-- Add more suite panels as needed -->
-    </div>
+    @media (max-width: 380px) {
+      .hero h1 { font-size: 1.35rem; }
+      .hero-address { font-size: 0.95rem; }
+      .stats-grid { padding: 12px; gap: 8px; }
+      .stat-value { font-size: 0.95rem; }
+      .stat-label { font-size: 0.7rem; }
+      .trust-badge { font-size: 0.78rem; padding: 8px 12px; }
+      .location-grid { grid-template-columns: 1fr; }
+      .suite-gallery img { width: 80px; height: 60px; }
+      .swiper-slide img { height: 180px; }
+      .btn { padding: 11px 20px; font-size: 0.88rem; }
+      .floating-cta a { padding: 12px 18px; font-size: 0.82rem; }
+    }
+  </style>
+</head>
+<body>
 
-    <!-- General Map Section -->
-    <section class="map-section" id="location-map">
-      <div class="map-title">Location Map</div>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2688.4168357935387!2d-122.24763072347556!3d47.9273998711788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490040759ee36e9%3A0x645eafc0a7ab5f8a!2s607%20Everett%20Mall%20Way%2C%20Everett%2C%20WA%2098204!5e0!3m2!1sen!2sus!4v1721590452098!5m2!1sen!2sus"
-        width="100%"
-        height="280"
-        frameborder="0"
-        style="border-radius: 12px; border: 0"
-        allowfullscreen=""
-        aria-hidden="false"
-        tabindex="0"
-      ></iframe>
-      <div style="margin-top: 8px">
-        Steps from Everett Mall & Hwy 99 • High-traffic retail corridor
+  <!-- Skip-to-content link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ============ HERO / HEADER ============ -->
+  <header class="hero" role="banner">
+    <div class="hero-inner">
+      <div class="now-leasing-badge">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        Now Leasing
+      </div>
+      <h1>NW Prime Properties</h1>
+      <p class="hero-address">607 Everett Mall Way, Everett, WA 98208</p>
+      <p class="hero-subtitle">Prime Retail &amp; Restaurant Spaces Available</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-amber">Schedule a Tour</a>
+        <a href="#suites" class="btn btn-outline">View Available Suites</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ============ STATS BAR ============ -->
+    <section class="stats-bar reveal" aria-label="Property Statistics">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          </div>
+          <div class="stat-value">3,000 SF</div>
+          <div class="stat-label">Total Available</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9h1"/><path d="M9 13h1"/><path d="M9 17h1"/></svg>
+          </div>
+          <div class="stat-value">2</div>
+          <div class="stat-label">Suites Available</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div class="stat-value">$17-18</div>
+          <div class="stat-label">Per SF / Year</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div class="stat-value">NNN</div>
+          <div class="stat-label">Triple Net Lease</div>
+        </div>
       </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section class="contact-section" id="contact">
-      <h2>Contact & Leasing Inquiry</h2>
-      <form
-        class="contact-form"
-        action="https://formspree.io/f/your-form-id"
-        method="POST"
-      >
-        <input type="text" name="name" required placeholder="Your Name" />
-        <input type="email" name="email" required placeholder="Your Email" />
-        <textarea
-          name="message"
-          required
-          rows="4"
-          placeholder="Your Message (suite, business type, etc.)"
-        ></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-      <div style="font-size: 0.92em; color: #7284a8; margin-top: 10px">
-        Or contact:
-        <a href="mailto:jonathanbgjo@gmail.com">jonathanbgjo@gmail.com</a> |
-        425-443-1002
+    <!-- ============ SWIPER GALLERY ============ -->
+    <section class="gallery-section reveal" aria-label="Property Photo Gallery">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./images/IMG_3458.jpg" alt="Front left view of the Everett Mall strip center" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/IMG_0187.jpg" alt="Middle view of the strip center storefronts" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/IMG_0152.jpg" alt="Signage and visibility from the street" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/map.jpg" alt="Aerial map view showing property location" loading="lazy" />
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev" aria-label="Previous slide"></div>
+        <div class="swiper-button-next" aria-label="Next slide"></div>
       </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="footer">
-      NW Prime Properties – Everett Mall Strip Center<br />
-      607 Everett Mall Way, Everett, WA 98208 &nbsp;|&nbsp; &copy; 2025 Jonathan
-      E. Jo
-      <br />
-      <a href="mailto:jonathanbgjo@gmail.com">Contact</a>
-      <!-- Optional: <a href="#">Privacy Policy</a> | <a href="#">Leasing Info</a> -->
-    </footer>
+    <!-- ============ TRUST INDICATORS ============ -->
+    <section class="trust-strip reveal" aria-label="Trust Indicators">
+      <div class="trust-grid">
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Professionally Managed
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          Flexible Lease Terms
+        </div>
+        <div class="trust-badge">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          Available Now
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Responsive Contact
+        </div>
+      </div>
+    </section>
 
-    <!-- Swiper JS for gallery -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script>
-      // Swiper gallery at the top
-      var swiper = new Swiper(".swiper", {
-        pagination: { el: ".swiper-pagination", clickable: true },
-        slidesPerView: 1,
-        loop: true,
-        autoplay: { delay: 3700, disableOnInteraction: false },
+    <!-- ============ PROPERTY HIGHLIGHTS ============ -->
+    <section class="highlights-section reveal" aria-label="Property Highlights">
+      <div class="section-container">
+        <h2 class="section-heading">Property Highlights</h2>
+        <p class="section-subheading">Everything your business needs to thrive</p>
+        <div class="highlights-grid">
+          <div class="highlight-card">
+            <div class="highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h3>High-Traffic Location</h3>
+            <p>Steps from Everett Mall on the busy Hwy 99 corridor with excellent drive-by traffic</p>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <h3>Ample Parking</h3>
+            <p>Generous shared parking lot with convenient direct storefront access for customers</p>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>New HVAC Systems</h3>
+            <p>Recently upgraded heating and cooling systems for energy efficiency and comfort</p>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3>Flexible Build-Out</h3>
+            <p>Customize the space to match your business vision with available build-out assistance</p>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <h3>High Signage Visibility</h3>
+            <p>Premium street-facing signage opportunities visible to thousands of daily commuters</p>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <h3>NNN Lease Structure</h3>
+            <p>Tenant pays base rent plus property taxes, insurance, and maintenance for transparency</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SUITE TABS ============ -->
+    <section class="suites-section reveal" id="suites" aria-label="Available Suites">
+      <div class="section-container">
+        <h2 class="section-heading">Available Suites</h2>
+        <p class="section-subheading">Two prime spaces ready for your business</p>
+
+        <div class="tab-container">
+          <div class="tab-buttons" role="tablist" aria-label="Suite Selection">
+            <button class="tab-btn active" role="tab" id="tab-suite101" aria-selected="true" aria-controls="panel-suite101" onclick="showTab(event, 'panel-suite101', 'tab-suite101')">Suite 101 &mdash; 1,200 SF</button>
+            <button class="tab-btn" role="tab" id="tab-suite102" aria-selected="false" aria-controls="panel-suite102" onclick="showTab(event, 'panel-suite102', 'tab-suite102')">Suite 102 &mdash; 1,800 SF</button>
+          </div>
+
+          <!-- SUITE 101 PANEL -->
+          <div id="panel-suite101" class="tab-panel active" role="tabpanel" aria-labelledby="tab-suite101">
+            <div class="suite-header">
+              <h3 class="suite-title">Suite 101</h3>
+              <span class="availability-tag">
+                <span class="pulse-dot" aria-hidden="true"></span>
+                Available Now
+              </span>
+            </div>
+
+            <div class="price-callout">
+              <div class="price-item">
+                <div class="label">Size</div>
+                <div class="value">1,200 SF</div>
+              </div>
+              <div class="price-divider" aria-hidden="true"></div>
+              <div class="price-item">
+                <div class="label">Asking Rate</div>
+                <div class="value">$18/SF/yr</div>
+              </div>
+              <div class="price-divider" aria-hidden="true"></div>
+              <div class="price-item">
+                <div class="label">Est. Monthly</div>
+                <div class="value">~$1,800/mo</div>
+              </div>
+              <div class="price-divider" aria-hidden="true"></div>
+              <div class="price-item">
+                <div class="label">Lease Type</div>
+                <div class="value">NNN</div>
+              </div>
+            </div>
+
+            <div class="suite-detail-row">
+              <svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M9 8h1"/><path d="M9 12h1"/><path d="M9 16h1"/><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/></svg>
+              Bright storefront with direct access from parking lot
+            </div>
+            <div class="suite-detail-row">
+              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              New HVAC system installed
+            </div>
+            <div class="suite-detail-row">
+              <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              Ample parking directly in front of unit
+            </div>
+
+            <div class="suite-divider"></div>
+
+            <div class="features-title">Features</div>
+            <div class="feature-list">
+              <div class="feature-item"><span class="feature-check" aria-hidden="true">&#10003;</span> Street-facing storefront</div>
+              <div class="feature-item"><span class="feature-check" aria-hidden="true">&#10003;</span> New HVAC system</div>
+              <div class="feature-item"><span class="feature-check" aria-hidden="true">&#10003;</span> Direct parking access</div>
+              <div class="feature-item"><span class="feature-check" aria-hidden="true">&#10003;</span> High visibility signage</div>
+              <div class="feature-item"><span class="feature-check" aria-hidden="true">&#10003;</span> Build-out ready</div>
+              <div class="feature-item"><span class="feature-check" aria-hidden="true">&#10003;</span> ADA accessible</div>
+            </div>
+
+            <div class="ideal-for">
+              <div class="label">Ideal For</div>
+              <div class="chip-bar">
+                <span class="chip">Retail</span>
+                <span class="chip">Service</span>
+                <span class="chip">Quick-Serve Restaurant</span>
+              </div>
+            </div>
+
+            <div class="suite-divider"></div>
+
+            <div class="suite-gallery">
+              <img src="./images/IMG_3458.jpg" alt="Suite 101 front left view" />
+              <img src="./images/IMG_0187.jpg" alt="Suite 101 middle view" />
+              <img src="./images/IMG_0152.jpg" alt="Suite 101 signage" />
+              <img src="./images/map.jpg" alt="Property map overview" loading="lazy" />
+            </div>
+
+            <div class="suite-actions">
+              <a href="#contact" class="btn btn-amber">Inquire About Suite 101</a>
+              <a href="./images/Jo_Flyer2.pdf" target="_blank" rel="noopener" class="btn btn-outline-blue">Download Flyer (PDF)</a>
+            </div>
+
+            <iframe src="./images/Jo_Flyer2.pdf" width="100%" height="300" class="pdf-embed" title="Suite 101 property flyer"></iframe>
+          </div>
+
+          <!-- SUITE 102 PANEL -->
+          <div id="panel-suite102" class="tab-panel" role="tabpanel" aria-labelledby="tab-suite102">
+            <div class="suite-header">
+              <h3 class="suite-title">Suite 102</h3>
+              <span class="availability-tag">
+                <span class="pulse-dot" aria-hidden="true"></span>
+                Available Now
+              </span>
+            </div>
+
+            <div class="price-callout">
+              <div class="price-item">
+                <div class="label">Size</div>
+                <div class="value">1,800 SF</div>
+              </div>
+              <div class="price-divider" aria-hidden="true"></div>
+              <div class="price-item">
+                <div class="label">Asking Rate</div>
+                <div class="value">$17/SF/yr</div>
+              </div>
+              <div class="price-divider" aria-hidden="true"></div>
+              <div class="price-item">
+                <div class="label">Est. Monthly</div>
+                <div class="value">~$2,550/mo</div>
+              </div>
+              <div class="price-divider" aria-hidden="true"></div>
+              <div class="price-item">
+                <div class="label">Lease Type</div>
+                <div class="value">NNN</div>
+              </div>
+            </div>
+
+            <div class="suite-detail-row">
+              <svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M9 8h1"/><path d="M9 12h1"/><path d="M9 16h1"/><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/></svg>
+              End-cap location with premium visibility
+            </div>
+            <div class="suite-detail-row">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+              Lots of natural light throughout
+            </div>
+            <div class="suite-detail-row">
+              <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              High signage visibility from Hwy 99
+            </div>
+
+            <div class="suite-divider"></div>
+
+            <div class="features-title">Features</div>
+            <div class="feature-list">
+              <div class="feature-item"><span class="feature-check" aria-hidden="true">&#10003;</span> End-cap position</div>
+              <div class="feature-item"><span class="feature-check" aria-hidden="true">&#10003;</span> Natural light</div>
+              <div class="feature-item"><span class="feature-check" aria-hidden="true">&#10003;</span> High signage visibility</div>
+              <div class="feature-item"><span class="feature-check" aria-hidden="true">&#10003;</span> Build-out assistance</div>
+              <div class="feature-item"><span class="feature-check" aria-hidden="true">&#10003;</span> Ample parking</div>
+              <div class="feature-item"><span class="feature-check" aria-hidden="true">&#10003;</span> ADA accessible</div>
+            </div>
+
+            <div class="ideal-for">
+              <div class="label">Ideal For</div>
+              <div class="chip-bar">
+                <span class="chip">Fitness</span>
+                <span class="chip">Retail</span>
+                <span class="chip">Food Concepts</span>
+              </div>
+            </div>
+
+            <div class="suite-divider"></div>
+
+            <div class="suite-gallery">
+              <img src="./images/IMG_3458.jpg" alt="Suite 102 front left view" />
+              <img src="./images/IMG_0187.jpg" alt="Suite 102 middle view" />
+              <img src="./images/IMG_0152.jpg" alt="Suite 102 signage" />
+              <img src="./images/map.jpg" alt="Property map overview" loading="lazy" />
+            </div>
+
+            <div class="suite-actions">
+              <a href="#contact" class="btn btn-amber">Inquire About Suite 102</a>
+              <a href="./images/Jo_Flyer2.pdf" target="_blank" rel="noopener" class="btn btn-outline-blue">Download Flyer (PDF)</a>
+            </div>
+
+            <iframe src="./images/Jo_Flyer2.pdf" width="100%" height="300" class="pdf-embed" title="Suite 102 property flyer"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY THIS LOCATION ============ -->
+    <section class="location-section reveal" aria-label="Why This Location">
+      <h2 class="section-heading">Why This Location</h2>
+      <p class="section-subheading">A proven retail corridor with built-in demand</p>
+
+      <div class="location-grid">
+        <div class="location-card">
+          <div class="location-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 3h7v7H3z"/><path d="M14 3h7v7h-7z"/><path d="M3 14h7v7H3z"/><path d="M14 14h7v7h-7z"/></svg>
+          </div>
+          <h3>Steps from Everett Mall</h3>
+          <p>Adjacent to the region's major shopping destination and its customer base</p>
+        </div>
+        <div class="location-card">
+          <div class="location-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3>Hwy 99 High-Traffic</h3>
+          <p>Positioned on the busy Highway 99 corridor with thousands of daily vehicles</p>
+        </div>
+        <div class="location-card">
+          <div class="location-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+          </div>
+          <h3>Growing Everett Market</h3>
+          <p>Everett is one of the fastest-growing cities in the Puget Sound region</p>
+        </div>
+        <div class="location-card">
+          <div class="location-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Established Retail Node</h3>
+          <p>Surrounded by major national retailers and strong anchor tenants</p>
+        </div>
+      </div>
+
+      <div class="anchors-section">
+        <div class="anchors-label">Nearby Anchors</div>
+        <span class="anchor-chip">Everett Mall</span>
+        <span class="anchor-chip">Walmart</span>
+        <span class="anchor-chip">Best Buy</span>
+        <span class="anchor-chip">Home Depot</span>
+        <span class="anchor-chip">Ross</span>
+      </div>
+    </section>
+
+    <!-- ============ LOCATION MAP ============ -->
+    <section class="map-section reveal" id="location" aria-label="Location Map">
+      <div class="section-container">
+        <h2 class="section-heading">Location</h2>
+        <p class="section-subheading">607 Everett Mall Way, Everett, WA 98208</p>
+        <div class="map-wrapper">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2688.4168357935387!2d-122.24763072347556!3d47.9273998711788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490040759ee36e9%3A0x645eafc0a7ab5f8a!2s607%20Everett%20Mall%20Way%2C%20Everett%2C%20WA%2098204!5e0!3m2!1sen!2sus!4v1721590452098!5m2!1sen!2sus"
+            allowfullscreen=""
+            loading="lazy"
+            title="Map showing 607 Everett Mall Way, Everett, WA"
+          ></iframe>
+          <p class="map-address">Steps from Everett Mall &amp; Hwy 99 &bull; High-traffic retail corridor</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ACCORDION ============ -->
+    <section class="faq-section reveal" aria-label="Frequently Asked Questions">
+      <div class="section-container">
+        <h2 class="section-heading">Frequently Asked Questions</h2>
+        <p class="section-subheading">Get answers to common leasing questions</p>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+              What does NNN mean?
+              <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Triple Net (NNN) means the tenant pays base rent plus their share of property taxes, insurance, and common area maintenance. This structure provides transparency in your total occupancy costs.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+              What are the lease terms?
+              <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Flexible lease terms available. Contact us to discuss options that work for your business timeline and growth plans.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+              Is build-out assistance available?
+              <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Yes, we work with tenants to accommodate build-out needs. Let's discuss your vision for the space and how we can help bring it to life.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+              When is the space available?
+              <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Spaces are available now for immediate occupancy. Schedule a tour today to see the suites in person.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+              What types of businesses are allowed?
+              <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                We welcome retail, restaurant, service, and fitness concepts. Contact us to confirm your business type is a good fit for the center.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+              What are the estimated total costs?
+              <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Base rent ranges from $17-18/sqft/yr NNN. Total costs including NNN charges vary by suite. Contact us for a detailed breakdown tailored to your needs.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT SECTION ============ -->
+    <section class="contact-section reveal" id="contact" aria-label="Contact and Leasing Inquiry">
+      <div class="section-container">
+        <h2 class="section-heading">Contact &amp; Leasing Inquiry</h2>
+        <p class="section-subheading">Reach out to schedule a tour or ask questions</p>
+
+        <div class="contact-wrapper">
+          <!-- CONFIGURE: Replace 'your-form-id' with your actual Formspree form ID from https://formspree.io -->
+          <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name">Full Name *</label>
+                <input type="text" id="contact-name" name="name" required placeholder="Your full name" autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="contact-phone">Phone Number</label>
+                <input type="tel" id="contact-phone" name="phone" placeholder="(425) 555-0100" autocomplete="tel" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email">Email Address *</label>
+              <input type="email" id="contact-email" name="email" required placeholder="you@example.com" autocomplete="email" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-suite">Suite Interest</label>
+                <select id="contact-suite" name="suite_interest">
+                  <option value="" disabled selected>Select a suite</option>
+                  <option value="Suite 101">Suite 101 (1,200 SF)</option>
+                  <option value="Suite 102">Suite 102 (1,800 SF)</option>
+                  <option value="Both">Both Suites</option>
+                  <option value="Not Sure">Not Sure Yet</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="contact-business">Business Type</label>
+                <input type="text" id="contact-business" name="business_type" placeholder="e.g., Restaurant, Retail" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message">Message *</label>
+              <textarea id="contact-message" name="message" required rows="4" placeholder="Tell us about your business and what you're looking for..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-amber" style="width:100%; justify-content:center;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Message
+            </button>
+          </form>
+
+          <div class="contact-alt">
+            Or reach us directly:
+            <a href="mailto:jonathanbgjo@gmail.com">jonathanbgjo@gmail.com</a> &bull;
+            <a href="tel:+14254431002">425-443-1002</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>NW Prime Properties</h3>
+        <p>Professional commercial real estate leasing at the Everett Mall Strip Center. Prime retail and restaurant spaces with high visibility and traffic.</p>
+        <address>607 Everett Mall Way<br/>Everett, WA 98208</address>
+      </div>
+      <div>
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#suites" onclick="showTab(null, 'panel-suite101', 'tab-suite101')">Suite 101</a></li>
+          <li><a href="#suites" onclick="showTab(null, 'panel-suite102', 'tab-suite102')">Suite 102</a></li>
+          <li><a href="#location">Location</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="./images/Jo_Flyer2.pdf" target="_blank" rel="noopener">Property Flyer (PDF)</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4 class="footer-heading">Contact Us</h4>
+        <p><a href="tel:+14254431002">425-443-1002</a></p>
+        <p><a href="mailto:jonathanbgjo@gmail.com">jonathanbgjo@gmail.com</a></p>
+        <p style="margin-top:16px; font-size: 0.82rem;">Monday - Friday<br/>9:00 AM - 5:00 PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="copyright-year"></span> Jonathan E. Jo. All rights reserved.</span>
+      <span class="footer-disclaimer">All information deemed reliable but not guaranteed. Pricing and availability subject to change.</span>
+    </div>
+  </footer>
+
+  <!-- ============ FLOATING CTA ============ -->
+  <div class="floating-cta" aria-label="Contact us">
+    <a href="#contact">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Contact Us
+    </a>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script>
+    /* ============ SWIPER INITIALIZATION ============ */
+    var swiper = new Swiper('.swiper', {
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      slidesPerView: 1,
+      loop: true,
+      effect: 'fade',
+      fadeEffect: { crossFade: true },
+      autoplay: { delay: 4000, disableOnInteraction: false },
+      speed: 800
+    });
+
+    /* ============ TAB SWITCHING ============ */
+    function showTab(evt, panelId, tabId) {
+      // Remove active from all panels and tabs
+      document.querySelectorAll('.tab-panel').forEach(function(el) {
+        el.classList.remove('active');
+      });
+      document.querySelectorAll('.tab-btn').forEach(function(btn) {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
       });
 
-      // Tabs JS
-      function showTab(evt, id) {
-        document
-          .querySelectorAll(".tab-panel")
-          .forEach((el) => el.classList.remove("active"));
-        document.getElementById(id).classList.add("active");
-        document
-          .querySelectorAll(".tab-btn")
-          .forEach((btn) => btn.classList.remove("active"));
-        evt.target.classList.add("active");
+      // Activate selected panel and tab
+      document.getElementById(panelId).classList.add('active');
+      var tabEl = document.getElementById(tabId);
+      tabEl.classList.add('active');
+      tabEl.setAttribute('aria-selected', 'true');
+
+      // Prevent default if called from an event
+      if (evt) evt.preventDefault && evt.preventDefault();
+    }
+
+    /* ============ FAQ ACCORDION ============ */
+    function toggleFaq(button) {
+      var item = button.closest('.faq-item');
+      var answer = item.querySelector('.faq-answer');
+      var isOpen = item.classList.contains('open');
+
+      // Close all others
+      document.querySelectorAll('.faq-item.open').forEach(function(openItem) {
+        openItem.classList.remove('open');
+        openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        openItem.querySelector('.faq-answer').style.maxHeight = null;
+      });
+
+      // Toggle current
+      if (!isOpen) {
+        item.classList.add('open');
+        button.setAttribute('aria-expanded', 'true');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
       }
-    </script>
-  </body>
+    }
+
+    /* ============ SCROLL REVEAL ============ */
+    (function() {
+      var revealElements = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        // Fallback: just show everything
+        revealElements.forEach(function(el) { el.classList.add('visible'); });
+        return;
+      }
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      revealElements.forEach(function(el) {
+        observer.observe(el);
+      });
+    })();
+
+    /* ============ DYNAMIC COPYRIGHT YEAR ============ */
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
